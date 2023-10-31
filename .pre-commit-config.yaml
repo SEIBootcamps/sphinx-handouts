@@ -20,6 +20,6 @@ repos:
         name: stylelint
         entry: ./node_modules/.bin/stylelint
         language: node
-        files: ^src/scss/
-        types: [scss]
+        files: src/scss/
         args: ['--fix']
+        verbose: true
