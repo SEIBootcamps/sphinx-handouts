@@ -23,7 +23,7 @@ theme_static_assets = ["darkmode.js"]
 
 def setup(app: "Sphinx") -> "Dict[str, Any]":
     # Config values
-    app.add_config_value("seibootcamps_html_preconnect", [], rebuild="html")
+    app.add_config_value("html_preconnect", [], rebuild="html")
 
     # Theme: seibootcamps
     app.add_html_theme("seibootcamps", str(seibootcamps_theme_dir.resolve()))
@@ -44,7 +44,7 @@ def setup(app: "Sphinx") -> "Dict[str, Any]":
 
 
 def add_preconnect_to_page_context(app, _, __, context, ___) -> None:
-    context["html_preconnect"] = app.config.seibootcamps_html_preconnect
+    context["html_preconnect"] = app.config.html_preconnect
 
 
 def add_theme_static_files(app: "Sphinx", config: "Config") -> None:

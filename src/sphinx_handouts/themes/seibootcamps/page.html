@@ -1,12 +1,15 @@
 {# code: language=jinja-html #}
 
-{# seibootcamps/page.html Master template for Specs pages. #}
+{#
+  seibootcamps/page.html
+  Master template for handouts pages.
+#}
 {%- extends "layout.html" %}
 
 {%- block inner_nav %}
-{{ toc }}
+  {{ toc }}
 {%- endblock inner_nav %}
 
 {%- block document %}
-{{ body }}
+  {{ body }}
 {%- endblock document %}
