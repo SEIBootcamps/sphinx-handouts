@@ -1,0 +1,26 @@
+{#
+  revealjs/layout.html
+#}
+
+{%- extends "seibootcamps/layout.html" %}
+
+{%- block before_layout %}{% endblock before_layout %}
+
+{%- block layout %}
+  {%- block document %}{% endblock document %}
+{%- endblock layout %}
+
+{%- block beforeend_body %}
+  {%- block revealjs_init %}
+    <script>
+      (() => {
+        Reveal.initialize({
+          slideNumber: "c/t",
+          showSlideNumber: "print",
+          hashOneBasedIndex: true,
+          hash: true
+        });
+      })();
+    </script>
+  {%- endblock revealjs_init %}
+{%- endblock beforeend_body %}

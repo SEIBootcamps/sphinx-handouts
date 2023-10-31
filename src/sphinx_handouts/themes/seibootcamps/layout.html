@@ -1,0 +1,70 @@
+{# seibootcamps/layout.html #}
+
+<!doctype html>
+<html lang="en" {% block html_extra_attrs %}{% endblock html_extra_attrs %}>
+  <head>
+    {%- block afterbegin_head %} {%- endblock afterbegin_head %} {%- block head
+    %} {%- for url in html_preconnect %}
+    <link rel="preconnect" href="{{ url }}" crossorigin />
+    {%- endfor %}
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {%- block extra_meta %} {%- endblock extra_meta %}
+
+    <title>
+      {%- block title %} {%- block title_prefix %}{{ title }}{% endblock
+      title_prefix %} {%- block title_separator %} | {% endblock title_separator
+      %} {%- block title_suffix %}{{ docstitle|e }}{% endblock title_suffix %}
+      {%- endblock title %}
+    </title>
+
+    {# CSS files, added via the Application API (app.add_css_file) or Sphinx
+    config (html_css_files) #} {%- block styles %} {%- for css in css_files %}
+    {%- if css|attr("filename") %} {{ css_tag(css) }} {%- else %}
+    <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
+    {%- endif %} {%- endfor %} {%- endblock styles %} {# JS files, added via
+    Application API (app.add_js_file) or Sphinx config (html_js_files) #} {%-
+    block scripts %} {%- for js in script_files %} {{ js_tag(js) }} {%- endfor
+    %} {%- endblock scripts %} {%- endblock head %} {%- block beforeend_head %}
+    {%- endblock beforeend_head %}
+  </head>
+  <body>
+    {%- block afterbegin_body %} {%- endblock afterbegin_body %} {%- block
+    bootstrap_icons %}
+    <div class="d-none">{{ bs_icons|safe }}</div>
+    {%- endblock bootstrap_icons %} {%- block body %} {%- block before_layout %}
+    <div class="seibootcamps-brand sticky-lg-top">
+      {%- block theme_toggler %} {% include 'themetoggler.html.jinja' %} {%-
+      endblock theme_toggler %}
+    </div>
+    {%- endblock before_layout %} {%- block layout %}
+    <div class="seibootcamps-layout d-block d-lg-grid">
+      {%- block sidebar %}
+      <aside
+        class="seibootcamps-sidebar text-body-secondary d-none d-lg-block sticky-lg-top"
+      >
+        <strong class="d-none d-md-block h6 my-2 text-body-secondary">
+          {% block sidebar_header %}On this page{% endblock sidebar_header %}
+        </strong>
+        <hr class="d-none d-md-block my-2 text-body-tertiary" />
+        {%- block nav %}
+        <nav class="d-none d-md-block">
+          {%- block inner_nav %} {%- endblock inner_nav %}
+        </nav>
+        {%- endblock nav %}
+      </aside>
+      {%- endblock sidebar %} {%- block main %}
+      <main class="seibootcamps-main d-block d-lg-grid">
+        <div class="seibootcamps-document">
+          {% block document %} {% endblock document %}
+        </div>
+      </main>
+      {%- endblock main %}
+    </div>
+    {%- endblock layout %} {%- block after_layout %} {%- endblock after_layout
+    %} {%- endblock body %} {%- block beforeend_body %} {%- endblock
+    beforeend_body %}
+  </body>
+</html>
