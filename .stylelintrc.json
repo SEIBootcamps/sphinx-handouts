@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "stylelint-config-twbs-bootstrap",
+    "stylelint-prettier/recommended",
+    "stylelint-config-prettier"
+  ],
+  "reportInvalidScopeDisables": true,
+  "reportNeedlessDisables": true,
+  "overrides": [
+    {
+      "files": ["**/*.scss"],
+      "rules": {
+        "scss/selector-no-union-class-name": true,
+        "scss/at-function-named-arguments": null,
+        "scss/selector-no-redundant-nesting-selector": null,
+        "scss/at-import-no-partial-leading-underscore": null,
+        "scss/load-no-partial-leading-underscore": true
+      }
+    }
+  ]
+}

@@ -14,3 +14,12 @@ repos:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format
+  - repo: local
+    hooks:
+      - id: stylelint
+        name: stylelint
+        entry: ./node_modules/.bin/stylelint
+        language: node
+        files: ^src/scss/
+        types: [scss]
+        args: ['--fix']
