@@ -1,9 +1,0 @@
-.hlist {
-  td {
-    vertical-align: top;
-
-    &:not(:last-child) {
-      padding-inline-end: map-get($map: $spacers, $key: 3);
-    }
-  }
-}

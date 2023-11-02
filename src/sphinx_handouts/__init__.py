@@ -4,7 +4,7 @@ from os import path
 from pathlib import Path
 from sphinx.util.osutil import copyfile, ensuredir
 
-from . import bs, directives
+from . import directives
 
 if TYPE_CHECKING:
     from typing import Any, Dict
@@ -31,8 +31,6 @@ def setup(app: "Sphinx") -> "Dict[str, Any]":
     app.connect("build-finished", copy_theme_static_files)
     app.connect("html-page-context", add_preconnect_to_page_context)
 
-    # Setup Bootstrap roles, CSS, and other stuff
-    bs.setup(app)
     # Directives
     directives.setup(app)
 
