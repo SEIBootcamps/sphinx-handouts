@@ -1,9 +1,5 @@
 extensions = ["sphinx_bootcampstrap", "sphinx_handouts"]
 html_theme = "seibootcamps"
-seibootcamps_html_preconnect = [
-    "https://fonts.googleapis.com",
-    "https://fonts.gstatic.com",
-]
 
 html_static_path = ["_static"]
 html_css_files = [

@@ -5,14 +5,14 @@
 #}
 
 <!DOCTYPE html>
-<html lang="en" {% block html_extra_attrs %}{% endblock html_extra_attrs %}>
+<html lang="en" data-bs-theme="dark" {% block html_extra_attrs %}{% endblock html_extra_attrs %}>
   <head>
     {%- block afterbegin_head %}
     {%- endblock afterbegin_head %}
 
     {%- block head %}
 
-      {%- for url in html_preconnect %}
+      {%- for url in handouts_font_preconnect %}
         <link rel="preconnect" href="{{ url }}" crossorigin>
       {%- endfor %}
 
@@ -43,6 +43,7 @@
 
       {# JS files, added via Application API (app.add_js_file) or Sphinx config (html_js_files) #}
       {%- block scripts %}
+        <script src="{{ pathto('_static/darkmode.js', 1) }}"></script>
         {%- for js in script_files %}
           {{ js_tag(js) }}
         {%- endfor %}
