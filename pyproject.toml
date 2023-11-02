@@ -29,6 +29,11 @@ optional = true
 [tool.poetry.group.lsp.dependencies]
 esbonio = "*"
 
+
+
+[tool.poetry.group.buildlocal.dependencies]
+sphinx-bootcampstrap = {path = "../sphinx-bootcampstrap"}
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
