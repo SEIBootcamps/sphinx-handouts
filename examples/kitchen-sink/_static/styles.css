@@ -10,4 +10,9 @@
 .emphasized .hll {
   /* stylelint-disable-next-line declaration-no-important */
   opacity: 1 !important;
+  background-color: transparent !important;
+}
+
+.highlight {
+  background: unset;
 }
