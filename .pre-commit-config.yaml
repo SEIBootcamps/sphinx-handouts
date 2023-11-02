@@ -18,8 +18,8 @@ repos:
     hooks:
       - id: stylelint
         name: stylelint
-        entry: ./node_modules/.bin/stylelint
+        entry: yarn
         language: node
         files: src/scss/
-        args: ['--fix']
+        args: ['yarn run css:lint']
         verbose: true
